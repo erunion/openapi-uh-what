@@ -57,6 +57,7 @@
 * In the sidebar.
 * On the reference page. ✅
 
+#### Demo
 ![](tag-info-surfaced.png)
 
 ### Do we support OpenAPI Moonwalk?
@@ -117,6 +118,8 @@
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=OpenAPI%2520schema%2520validation%2520failed.%250A%250AMINITEMS%2520must%2520NOT%2520have%2520fewer%2520than%25201%2520items%250A%250A%2520%252059%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522schema%2522%253A%2520%257B%250A%2520%252060%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522type%2522%253A%2520%2522object%2522%252C%250A%253E%252061%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522required%2522%253A%2520%255B%255D%252C%250A%2520%2520%2520%2520%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255E%2520%25F0%259F%2591%2588%25F0%259F%258F%25BD%2520%2520minItems%2520must%2520NOT%2520have%2520fewer%2520than%25201%2520items%250A%2520%252062%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522properties%2522%253A%2520%257B%250A%2520%252063%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522id%2522%253A%2520%257B%250A%2520%252064%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522type%2522%253A%2520%2522integer%2522%252C)
 
+#### How can you fix this?
+
 1. `required` should be a `true` or `false`
 2. `required` should contain fields ✅
 
@@ -124,6 +127,8 @@
 ![](invalid-path.png)
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=OpenAPI%2520schema%2520validation%2520failed.%250A%250AADDITIONAL%2520PROPERTY%2520must%2520NOT%2520have%2520additional%2520properties%250A%250A%2520%252012%2520%257C%2520%2520%2520%255D%252C%250A%2520%252013%2520%257C%2520%2520%2520%2522paths%2522%253A%2520%257B%250A%253E%252014%2520%257C%2520%2520%2520%2520%2520%2522get%2522%253A%2520%257B%250A%2520%2520%2520%2520%2520%257C%2520%2520%2520%2520%2520%255E%255E%255E%255E%255E%2520%25F0%259F%2598%25B2%2520%2520get%2520is%2520not%2520expected%2520to%2520be%2520here%21%250A%2520%252015%2520%257C%2520%2520%2520%2520%2520%2520%2520%2522tags%2522%253A%2520%255B%250A%2520%252016%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522pet%2522%250A%2520%252017%2520%257C%2520%2520%2520%2520%2520%2520%2520%255D%252C)
+
+#### How can you fix this?
 
 1. `get` should start with a slash
 2. The operation should be moved into being a `$ref`
@@ -165,6 +170,8 @@
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=Unexpected%2520string%2520in%2520JSON%2520at%2520position%2520832%250A)
 
+#### What does this mean?
+
 * This is actually a YAML file.
 * There's probably a missing comma. ✅
 * There's probably an unclosed quote. ✅
@@ -181,7 +188,10 @@ Unfortunately without writing our own JSON parser we can't easily tell a user wh
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=Validation%2520failed.%2520%252Fpaths%252Fpet%252F%257Bid%257D%252Fput%2520is%2520missing%2520path%2520parameter%28s%29%2520for%2520%257Bid%257D%250A)
 
+#### How can you fix this?
+
 * `/pet/{id}` should be written as `/pet/:id`
+* Delete `/{id}` from the path.
 * There's no `id` parameter ✅
 
 > ℹ️ Unlike all other parameters where if it's missing we don't care, path params are required to make API calls so if one isn't defined we throw a validation error.
@@ -191,6 +201,8 @@ Unfortunately without writing our own JSON parser we can't easily tell a user wh
 ![](optional-path-param.png)
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=OpenAPI%2520schema%2520validation%2520failed.%250A%250AENUM%2520must%2520be%2520equal%2520to%2520one%2520of%2520the%2520allowed%2520values%250A%28query%29%250A%250A%2520%252016%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%252017%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522name%2522%253A%2520%2522id%2522%252C%250A%253E%252018%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522in%2522%253A%2520%2522path%2522%252C%250A%2520%2520%2520%2520%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255E%255E%255E%255E%255E%255E%2520%25F0%259F%2591%2588%25F0%259F%258F%25BD%2520%2520Did%2520you%2520mean%2520query%2520here%253F%250A%2520%252019%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522required%2522%253A%2520false%252C%250A%2520%252020%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522schema%2522%253A%2520%257B%250A%2520%252021%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522type%2522%253A%2520%2522integer%2522)
+
+#### How can you fix this?
 
 * This error is garb ✅
 * `id` should actually be a query parameter
@@ -204,6 +216,8 @@ Unfortunately without writing our own JSON parser we can't easily tell a user wh
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=OpenAPI%2520schema%2520validation%2520failed.%250A%250AADDITIONAL%2520PROPERTY%2520must%2520NOT%2520have%2520additional%2520properties%250A%250A%2520%252030%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%255D%252C%250A%2520%252031%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522responses%2522%253A%2520%257B%250A%253E%252032%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522undefined%2522%253A%2520%257B%250A%2520%2520%2520%2520%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255E%255E%255E%255E%255E%255E%255E%255E%255E%255E%255E%2520%25F0%259F%2598%25B2%2520%2520undefined%2520is%2520not%2520expected%2520to%2520be%2520here%21%250A%2520%252033%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522description%2522%253A%2520%2522Invalid%2520id%2520value%2522%250A%2520%252034%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%252035%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D)
 
+#### How can you fix this?
+
 * `undefined` shouldn't be there... ✅
 * `undefined` should be something like `application/json`
 * `undefined` should be an HTTP status code ✅
@@ -213,6 +227,8 @@ Unfortunately without writing our own JSON parser we can't easily tell a user wh
 ![](invalid-schema-type.png)
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=OpenAPI%2520schema%2520validation%2520failed.%250A%250AENUM%2520must%2520be%2520equal%2520to%2520one%2520of%2520the%2520allowed%2520values%250A%28array%252C%2520boolean%252C%2520integer%252C%2520number%252C%2520object%252C%2520string%29%250A%250A%2520%252019%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522required%2522%253A%2520true%252C%250A%2520%252020%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522schema%2522%253A%2520%257B%250A%253E%252021%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522type%2522%253A%2520%2522any%2522%250A%2520%2520%2520%2520%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255E%255E%255E%255E%255E%2520%25F0%259F%2591%2588%25F0%259F%258F%25BD%2520%2520Did%2520you%2520mean%2520array%2520here%253F%250A%2520%252022%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%252023%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%252024%2520%257C%2520%2520%2520%2520%2520%2520%2520%255D%252C)
+
+#### How can you fix this?
 
 * `type` should be set to `["any"]`
 * `type` should be set to `string`
@@ -226,6 +242,8 @@ Unfortunately without writing our own JSON parser we can't easily tell a user wh
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=OpenAPI%2520schema%2520validation%2520failed.%250A%250AMINPROPERTIES%2520must%2520NOT%2520have%2520fewer%2520than%25201%2520properties%250A%250A%2520%252029%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522summary%2522%253A%2520%2522Update%2520a%2520pet%2522%252C%250A%2520%252030%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522description%2522%253A%2520%2522This%2520operation%2520will%2520update%2520a%2520pet%2520in%2520the%2520database.%2522%252C%250A%253E%252031%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522responses%2522%253A%2520%257B%257D%252C%250A%2520%2520%2520%2520%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255E%2520%25F0%259F%2591%2588%25F0%259F%258F%25BD%2520%2520minProperties%2520must%2520NOT%2520have%2520fewer%2520than%25201%2520properties%250A%2520%252032%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522security%2522%253A%2520%255B%250A%2520%252033%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%252034%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522apiKey%2522%253A%2520%255B%255D)
 
+#### What does this mean?
+
 * `responses` must contain responses ✅
 * `responses` can be deleted
 * Change `openapi` to `openapi: 3.1.0` ✅
@@ -238,6 +256,8 @@ Unfortunately without writing our own JSON parser we can't easily tell a user wh
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=OpenAPI%2520schema%2520validation%2520failed.%250A%250AADDITIONAL%2520PROPERTY%2520must%2520NOT%2520have%2520additional%2520properties%250A%250A%2520%25201064%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522name%2522%253A%2520%257B%250A%2520%25201065%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522type%2522%253A%2520%2522string%2522%252C%250A%253E%25201066%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522style%2522%253A%2520%2522deepObject%2522%250A%2520%2520%2520%2520%2520%2520%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255E%255E%255E%255E%255E%255E%255E%2520%25F0%259F%2598%25B2%2520%2520style%2520is%2520not%2520expected%2520to%2520be%2520here%21%250A%2520%25201067%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%252C%250A%2520%25201068%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522description%2522%253A%2520%257B%250A%2520%25201069%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522type%2522%253A%2520%2522string%2522)
 
+#### How can you fix this?
+
 * We don't support `style`
 * We don't support `deepObject`
 * `style` is only supported on top-level parameters ✅
@@ -249,8 +269,10 @@ Unfortunately without writing our own JSON parser we can't easily tell a user wh
 
 [🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=can%2520not%2520read%2520a%2520block%2520mapping%2520entry%253B%2520a%2520multiline%2520key%2520may%2520not%2520be%2520an%2520implicit%2520key%2520%2882%253A16%29%250A%250A%252079%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520in%253A%2520cookie%250A%252080%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520description%253A%2520%257C-%250A%252081%2520%257C%2520A%2520%2560form%2560%2520style%252C%2520non-exploded%2520array.%250A%252082%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520style%253A%2520form%250A---------------------%255E%250A%252083%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520explode%253A%2520false%250A%252084%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520schema%253A)
 
+#### What does this mean?
 * We don't support multiline descriptions.
 * The description is indented improperly. ✅
 * We don't support YAML.
 
+#### Example fix
 ![](yaml-quirks-proper.png)
