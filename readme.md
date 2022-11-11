@@ -111,7 +111,11 @@
 
 ## 🆘 Spec validation
 
-> ℹ️ These are all real validation errors that came in recently through the #oas-errors channel. Join it if you love Slack noise!
+There have been 42,070 validation errors posted to `#oas-errors` in the past 30 days. The following are all real errors.
+
+![](oh-no.gif)
+
+<small>Hop in if you love Slack noise!</smal>
 
 ### Empty `required: []`
 ![](empty-required.png)
