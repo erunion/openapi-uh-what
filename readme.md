@@ -242,3 +242,15 @@ Unfortunately without writing our own JSON parser we can't easily tell a user wh
 * We don't support `deepObject`
 * `style` is only supported on top-level parameters ✅
 * `style` is unsupported on parameter object properties
+
+### YAML quirks
+
+![](yaml-quirks.png)
+
+[🔗 See on carbon.sh](https://carbon.now.sh/?bg=rgba%281%2C142%2C245%2C1%29&t=one-dark&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=can%2520not%2520read%2520a%2520block%2520mapping%2520entry%253B%2520a%2520multiline%2520key%2520may%2520not%2520be%2520an%2520implicit%2520key%2520%2882%253A16%29%250A%250A%252079%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520in%253A%2520cookie%250A%252080%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520description%253A%2520%257C-%250A%252081%2520%257C%2520A%2520%2560form%2560%2520style%252C%2520non-exploded%2520array.%250A%252082%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520style%253A%2520form%250A---------------------%255E%250A%252083%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520explode%253A%2520false%250A%252084%2520%257C%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520schema%253A)
+
+* We don't support multiline descriptions.
+* The description is indented improperly. ✅
+* We don't support YAML.
+
+![](yaml-quirks-proper.png)
